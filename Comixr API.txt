@@ -1,3 +1,11 @@
 Get API: Comixr
 
 GET https://api.import.io/store/data/eaac5815-2a4d-477f-aa40-77be5e3a541b/_query?input/webpage/url=http%3A%2F%2Fxkcd.com%2F&_user=79616877-daea-4c2e-a3c8-db7e9051cb44&_apikey=vNbhgNzzDF7ocBq3qRLv2ZEoXE4QlBp2TB5G0BbTZ4MF9QZSVO%2FMlCgpFPtJDYDhg8HliCdrwQ4amOr6XW9mHA%3D%3D
+
+
+Query:
+{
+    "input": {
+        "webpage/url": "http://xkcd.com/"
+    }
+}
