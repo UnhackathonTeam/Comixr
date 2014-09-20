@@ -6,16 +6,17 @@
 <body>
 
 	<input type="text" id="newURL"=>Enter a URL here to track another webcomic:</input>
-	<button onClick="addURL(countCookies(), newURL)">Add</button>
+	<button onClick="addURL()">Add</button>
 	<script>
 		function countCookies() {
 			var list = document.cookie.split(';');
 			console.log(list.length);
-			return list.length
+			return list.length;
 		}
-		function addURL(num, url) {
-			document.cookie = num + "=" + url + "; " + "expires=Mon, 31 Dec 2019 12:00:00 UTC";
-			console.log(getCookie(1));
+		function addURL() {
+			var num = countCookies();
+			var newURL = document.getElementByID("newURL").value;
+			document.cookie = num + "=" + newURL + "; " + "expires=Mon, 31 Dec 2019 12:00:00 UTC";
 		}
 		function getCookie(name) {
     		var cname = name + "=";
@@ -25,6 +26,7 @@
         		while (c.charAt(0)==' ')
         			c = c.substring(1);
         		if (c.indexOf(cname) != -1) 
+        			console.log(c.substring(cname.length,c.length));
         			return c.substring(cname.length,c.length);
     		}
     		return "";
