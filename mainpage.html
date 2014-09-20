@@ -10,11 +10,24 @@
 	<script>
 		function countCookies() {
 			var list = document.cookie.split(';');
-			return ca.length
+			console.log(list.length);
+			return list.length
 		}
 		function addURL(num, url) {
-			var newURL = document.getElementByID("newURL").value;
-			document.cookie=num + "=" + url + "; " + "expires=Mon, 31 Dec 2019 12:00:00 UTC";
+			document.cookie = num + "=" + url + "; " + "expires=Mon, 31 Dec 2019 12:00:00 UTC";
+			console.log(getCookie(1));
+		}
+		function getCookie(name) {
+    		var cname = name + "=";
+    		var ca = document.cookie.split(';');
+    		for (var i = 0; i < ca.length; i++) {
+        		var c = ca[i];
+        		while (c.charAt(0)==' ')
+        			c = c.substring(1);
+        		if (c.indexOf(cname) != -1) 
+        			return c.substring(cname.length,c.length);
+    		}
+    		return "";
 		}
 	</script>
 
