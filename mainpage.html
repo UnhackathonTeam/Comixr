@@ -4,34 +4,8 @@
 		<title>Comixr: All Your Favorites in One Place</title>
 	</head>
 <body>
-
-	<input type="text" id="newURL"=>Enter a URL here to track another webcomic:</input>
-	<button onClick="addURL()">Add</button>
-	<script>
-		function countCookies() {
-			var list = document.cookie.split(';');
-			console.log(list.length);
-			return list.length;
-		}
-		function addURL() {
-			var num = countCookies();
-			var newURL = document.getElementByID("newURL").value;
-			document.cookie = num + "=" + newURL + "; " + "expires=Mon, 31 Dec 2019 12:00:00 UTC";
-		}
-		function getCookie(name) {
-    		var cname = name + "=";
-    		var ca = document.cookie.split(';');
-    		for (var i = 0; i < ca.length; i++) {
-        		var c = ca[i];
-        		while (c.charAt(0)==' ')
-        			c = c.substring(1);
-        		if (c.indexOf(cname) != -1) 
-        			console.log(c.substring(cname.length,c.length));
-        			return c.substring(cname.length,c.length);
-    		}
-    		return "";
-		}
-	</script>
-
+	<script src="comixr_script.js"></script>
+	<input type="text" id="newURL"=>Enter a URL here to track another webcomic</input>
+	<button onclick="createCookie(newURL, 1)">Add</button>
 </body>
 </html>
