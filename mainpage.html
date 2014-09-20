@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Comixr: All Your Favorites in One Place</title>
+	</head>
 <body>
-	<p>Hello world!</p>
-	<script src = "comixr_script.js" type = "text/javascript"></script>
+
+	<input type="text" id="newURL"=>Enter a URL here to track another webcomic:</input>
+	<button onClick="addURL(countCookies(), newURL)">Add</button>
+	<script>
+		function countCookies() {
+			var list = document.cookie.split(';');
+			return ca.length
+		}
+		function addURL(num, url) {
+			var newURL = document.getElementByID("newURL").value;
+			document.cookie=num + "=" + url + "; " + "expires=Mon, 31 Dec 2019 12:00:00 UTC";
+		}
+	</script>
+
 </body>
 </html>
