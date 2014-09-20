@@ -2,7 +2,7 @@ function createCookie(name,value) {
 	var date = new Date();
 	date.setTime("Thu, Mon 25 Dec 2017");
 	var expires = "; expires="+date.toGMTString();
-	document.cookie = name+"="+value+expires+"; path=/";
+	document.cookie = name + "=" + value + expires + "; path=/";
 };
 
 	function readCookie(name) {
