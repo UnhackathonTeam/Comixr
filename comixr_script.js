@@ -1,8 +1,8 @@
-function createCookie(name,value) {
+function createCookie(name) {
 	var date = new Date();
 	date.setTime("Thu, Mon 25 Dec 2017");
 	var expires = "; expires="+date.toGMTString();
-	document.cookie = name + "=" + value + expires + "; path=/";
+	document.cookie = name + "=1" + expires + "; path=/";
 	location.reload();
 };
 
@@ -21,3 +21,8 @@ function eraseCookie(name) {
 	createCookie(name,"",-1);
 };
 
+function hasNext(array, i) {
+	if (array[i+3] != null)
+		return true;
+	else return false;
+}

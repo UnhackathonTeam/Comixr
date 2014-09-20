@@ -7,7 +7,7 @@
 <body>
 	<script src="comixr_script.js"></script>
 	<input type="text" id="newURL"=>Enter a URL here to track another webcomic</input>
-	<button onclick="createCookie(newURL, 1)">Add</button>
+	<button onclick="javascript:createCookie(newURL);">Add</button>
 	<div id="pic">
 
 	</div>
@@ -55,8 +55,13 @@
     }
   </script>
 
-<script> var a = doQuery("http://xkcd.com");
-		var b = doQuery("http://buttersafe.com");
-		</script>
+<script>
+var cookies = document.cookie.split(';');
+var i = 0;
+while (hasNext(cookies, i)) {
+	i = (i + 3) % 3
+	doQuery(cookies[i]);
+}
+</script>
 
 </html>
