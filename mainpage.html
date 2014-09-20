@@ -21,8 +21,8 @@
 	</div>
 		<img src="http://cdn.faniq.com/images/logo/86/6686-1.gif" />
 	<script src="comixr_script.js"></script>
-	<input type="text" id="newURL"=><font color="white">Enter a URL here to track another webcomic</font></input>
-	<button onclick="javascript:createCookie(newURL);">Add</button>
+	<font color="white">Enter a URL here to track another webcomic</font> <input type="text" id="newURL"=></input>
+	<button onclick="javascript:createCookie(newURL);">Add</button><br><br>
 	<div id="pic">
 
 	</div>
@@ -49,8 +49,8 @@
 	    var d = data[i];
 		for (var k in d.data) {
 			if (/^http/.test(d.data[k])) {
-			divPic.innerHTML += (d.data[k] + "<br>");
-		   	divPic.innerHTML += ("<img src=\"" + d.data[k] + "\"/><br>");
+			divPic.innerHTML += ("This comic taken from: " + d.data[k] + "<br>");
+		   	divPic.innerHTML += ("<img src=\"" + d.data[k] + "\"/><br><br>");
 		   }
 		}
 	  }
@@ -78,5 +78,4 @@ while (hasNext(cookies, i)) {
 	doQuery(cookies[i]);
 }
 </script>
-
 </html>
