@@ -1,0 +1,16 @@
+body{
+	background-color: #362819;
+	padding: 15px 15px;
+	background-position: center;
+	text-align:center;
+}
+menu{
+	text-align: center;
+	padding: 2px;
+	word-spacing: 35px;
+	text-decoration:none;
+}
+#page-wrap {
+     width: 800px;
+     margin: 0 auto;
+}
