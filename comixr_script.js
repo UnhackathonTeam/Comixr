@@ -3,6 +3,7 @@ function createCookie(name,value) {
 	date.setTime("Thu, Mon 25 Dec 2017");
 	var expires = "; expires="+date.toGMTString();
 	document.cookie = name + "=" + value + expires + "; path=/";
+	location.reload();
 };
 
 	function readCookie(name) {
