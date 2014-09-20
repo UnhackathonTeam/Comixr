@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Import&bull;io Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- 1. Include the client library -->
+  <script src="https://cdn.import.io/js/2.0.0/importio.js"></script>
+
+<!-- 2. Configure the library -->
+  <script type="text/javascript">
+    importio.init({
+      "auth": {
+        "userGuid": "79616877-daea-4c2e-a3c8-db7e9051cb44",
+        "apiKey": "vNbhgNzzDF7ocBq3qRLv2ZEoXE4QlBp2TB5G0BbTZ4MF9QZSVO/MlCgpFPtJDYDhg8HliCdrwQ4amOr6XW9mHA=="
+      },
+      "host": "import.io"
+    });
+
+    // Data and done callbacks
+    var dataCallback = function(data) {
+      console.log("Data received", data);
+      for (var i = 0; i < data.length; i++) {
+	    var d = data[i];
+		for (var k in d.data) {
+		  document.write("<i>" + k + "</i>: " + d.data[k] + "<br />");
+		}
+		document.write("<hr>");
+	  }
+    }
+    var doneCallback = function(data) {
+      console.log("Done, all data:", data);
+      document.write("<b>Done</b><hr>");
+    }
+
+// 3. Do the query (when the function is called)
+    var doQuery = function() {
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://xkcd.com/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://buttersafe.com/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://thedoghousediaries.com/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://explosm.net/comics/3688/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://questionablecontent.net/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://www.sandraandwoo.com/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://limbero.org/jl8/183"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+
+      // Query for tile Comixr
+      importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "http://brawlinthefamily.keenspot.com/"
+        }
+      }, { "data": dataCallback, "done": doneCallback });
+    }
+  </script>
+  <style>body { text-align: center; } button { line-height: 20px; color: #333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; cursor: pointer; border: 1px solid #CCC; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05); outline: 0; padding: 11px 19px; font-size: 17.5px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; color: #FFF; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #EC3C87; background-image: -moz-linear-gradient(top,#EE4E93,#E92076); background-image: -webkit-gradient(linear,0 0,0 100%,from(#EE4E93),to(#E92076)); background-image: -webkit-linear-gradient(top,#EE4E93,#E92076); background-image: -o-linear-gradient(top,#EE4E93,#E92076); background-image: linear-gradient(to bottom,#EE4E93,#E92076); background-repeat: repeat-x; border-color: #E92076 #E92076 #AC1153; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee4e93',endColorstr='#ffe92076',GradientType=0); filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }</style>
+  <body>
+    <button onclick="doQuery()">Query</button>
+    <p style="margin-top: 0"><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAABaCAMAAADtqqpJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAvFQTFRFUVJST1BQUFFR/////f39TE1N/v7+TU5OUlNTTk9PSElJSUpK/Pz8WltbU1RU+Pj4SktLRkdHS0xM+/v7R0hI9/f3YmNjV1hYiouL5ubm7e3tVVZW9PT0VFVVXF1dQUJCRUZGWFlZ3t7e39/f9vb22dnZ8/PzzMzM0NDQ5OTk8fHx6urqyMjI+vr6X2Bg+fn5YGFhYWJif4CA8PDwjY6O6enp7Ozsc3R0cXJyi4uL7u7uZ2hoz8/PhoeHtre3kJGRmJmZQEFBqqqq2tvbkpOTnJ2d7+/vg4ODeXp6o6Oj9/j4goOD6+vrr7Cw1dXV1NTUbG1tysrKwcHB1dbWh4iIlJSUxMTEi4yMZmdnxsfHcnJyVldXd3h4vr6+TE5Orq+vZGVlY2RkQ0RE4eHhuLi44uLi3d3dzs/P09PT5+jofn9/x8fH29zcl5mZl5eXlpeXRkhIamtrra2tp6ioWVpabW5uXV5ePT4+cHFxw8PDQUNDx8jI19fX6OjobG5uPD09yMnJpqampaWlampqpqiok5WVvb29REZGnZ6era6u/v//1tfXvr+/kJCQdnd3gICA9PX1g4SE4ODgrK2tS01Nk5SUdHV1wMDAv8DAwMHBaWpq6unpREVFhIWFt7e38vLyv7+/fX19fX9/W1xccXFxioqKpqenaGhoTU1NXmBg4+Tke3x8QkNDZGRk0dHRWVtbZmVlh4eHf39/z9DQj4+Ps7Ozb3Bwc3Nz5eXljo+PSkxMUFBQ8vPz3Nzc9fX13NvbVVVVVFRU3t3deHl5oKCgU1NTdXZ25+fnuLm5ubm5a2xspKWlenp6wcLC9vf38fLyuru71NXVqKiow8TEm5ycsbKysbGx7e7uaGpqhoaGUlJSfn5+zc7O1tbWvLy8zc3N0tLS6uvrysvLoaKinp6edXV1/f7+zM3NiImJaGlp2tra8/T0TU9P29vb/Pv7bm9veHp69fb2XF5emZmZ6+rq+vv7s7S0u7y8lJWVZWZm////lMTowQAAAPt0Uk5T/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wDjnwPIAAAD80lEQVR42uzYU9AmRxQG4NMYf7bx27bXtm1nrZgbZze2bdu2bdtWX2X+3eAitZsvmz4Xqdq5mpqaear7nHd6ahqEnEPNE/zvV0GKzU49/9W9vsXS/RFrv6U/R5H00gsogPP0ShzdnTKAeK8r5ih6STsBMOC0WziGvsgLADpNN1QUydcd81123Slo2X2jfum6+wPTHnuc6iQdebtctp4YZJedVk1vPoMkV5dzyfrLTlsnzp79Q0SzBh/CperqGz67MGD1sJ92X6WcMPW9ei5RZ/11e+gQmD7ckX810FWXTqmWp7OCTxWAaQA1S0T0ydY+hjn5QAeTpp+TtF+lyTq5coodnz0ujit05llRafp5BtDQeJNsmMiFKgqPpob3mgmSdHZ3nILyzWKdZk7p7ebweRGT3h7Pk6PzTjuOesmyEAkcti1CTZvDG2sq5OijXgPwDIr1S4FrQMG21f64tc19mRS97IlLgGj5Yt5sJdPD/phPXkxK3Z8aYqcRnuOisMXQhiUkr+/56yiYS4uY+GGa4ZvUJldXb9wI5kFN9lnT/Yo5PiZZX/jKF6P79Z41thikJSj7y7dbx5Kta1b+Y8TTUC9bZ7/nZMFgRfswJlv/cw41oLUOxNIH3qRYnQksfWQKlE4VS485Dc9yN5ZenKLmLwJJ54UeoEOqkXT10TBc8aIDSXe/NRec8zmWPgAgcxWWXrkyQGZ3YHX1mMsJCSew9K9Ga8ZJUSy9MER8dUj/TUK9z0fJiUGssc8Kw6FdfiSdr81AdiJH0j+vA/pguYqkt63XjNUxrK6WbADl1kos/RkLbjuAIenB7z30nlFHIOl8DoV738Xa4yiZQzyRs7H0WRr4HnAg6Wp/H7iWMSS9tJYatdUCSe/IgN6ApQ/tBvAWq0j6HVkCqYcFjq7OmAnKykos/SEA63mBo7MFOqFT90HS/QfbPb1IIOlPhynNPoukOw5XQOn2I+mNVaD7PhY4OtvkAe31IhydXfYdAWuMQNIjik63FCDpi5KU6osZjl7+tQFm63bx/6aX3WAB1HwpcPQuF4DyCEfRebFLA++xqsDQ+d4hosP6UoGhs+vbNVBc7zgw9B9nOBWA+FE7vmvn9OCdy10GaJ4RQyXpfzWPqbzizKQBNNv1kZCiBxMFbrG1xMGytrHnWl5KzHBFmZCis7xrb358zbhxR0ZH9F3xa58AULJu2Mh/fi433T0praedAWcoUKvP7d3edNV2v+mXpYsXiELsb5BGNdA0XYe6MTk9lqNeemHSqVlkTz0dqGqvmrAwxyjkqKvBz8a+9H5kRfMna44/+a6ck5tzIu0cFolGB6v/N++FtH2xXfou/X+g/ybAAPqmhSv3+0oDAAAAAElFTkSuQmCC" /></p>
+  </body>
+</html>
