@@ -4,6 +4,15 @@
 		<title>Comixr: All Your Favorites in One Place</title>
 	</head>
 
+<body>
+	<script src="comixr_script.js"></script>
+	<input type="text" id="newURL"=>Enter a URL here to track another webcomic</input>
+	<button onclick="createCookie(newURL, 1)">Add</button>
+	<div id="pic">
+
+	</div>
+</body>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- 1. Include the client library -->
   <script src="https://cdn.import.io/js/2.0.0/importio.js"></script>
@@ -16,11 +25,38 @@
         "apiKey": "vNbhgNzzDF7ocBq3qRLv2ZEoXE4QlBp2TB5G0BbTZ4MF9QZSVO/MlCgpFPtJDYDhg8HliCdrwQ4amOr6XW9mHA=="
       },
       "host": "import.io"
-    });</script>
+    });
 
-<body>
-	<script src="comixr_script.js"></script>
-	<input type="text" id="newURL"=>Enter a URL here to track another webcomic</input>
-	<button onclick="createCookie(newURL, 1)">Add</button>
-</body>
+    // Data and done callbacks
+    var dataCallback = function(data) {
+      var divPic = document.getElementById("pic");
+      for (var i = 0; i < data.length; i++) {
+	    var d = data[i];
+		for (var k in d.data) {
+			if (/^http/.test(d.data[k])) {
+			divPic.innerHTML += (d.data[k] + "<br>");
+		   	divPic.innerHTML += ("<img src=\"" + d.data[k] + "\"/><br>");
+		   }
+		}
+	  }
+    }
+
+// 3. Do the query (when the function is called)
+    var doQuery = function(url) {
+      // Query for tile Comixr
+     importio.query({
+        "connectorGuids": [
+          "eaac5815-2a4d-477f-aa40-77be5e3a541b"
+        ],
+        "input": {
+          "webpage/url": "" + url
+        }
+      }, { "data": dataCallback });
+    }
+  </script>
+
+<script> var a = doQuery("http://xkcd.com");
+		var b = doQuery("http://buttersafe.com");
+		</script>
+
 </html>
