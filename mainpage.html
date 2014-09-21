@@ -4,6 +4,7 @@
 		<title>Comixr: All Your Favorites in One Place</title>
 		<link rel="stylesheet" href="style.css">
 		<link rel="shortcut icon" href="/favicon.ico" >
+		<link rel="shortcut icon" href="http://plasq.com/attachments/large/135/comic-life-2-icon.png" >
 	</head>
 <body>
 	<div id="page-wrap">
@@ -25,7 +26,7 @@
 		<img src="http://cdn.faniq.com/images/logo/86/6686-1.gif" />
 	<script src="comixr_script.js"></script>
 	<font color="white">Enter a URL here to track another webcomic</font> <input type="text" id="newURL"=></input>
-	<button onclick="javascript:createCookie(newURL);">Add</button><br><br>
+	<button onclick="javascript:addURL(newURL);">Add</button><br><br>
 	<div id="pic">
 
 	</div>
@@ -52,7 +53,7 @@
 	    var d = data[i];
 		for (var k in d.data) {
 			if (/^http/.test(d.data[k])) {
-			divPic.innerHTML += ("This comic taken from: " + d.data[k] + "<br>");
+			divPic.innerHTML += ("This comic taken from: " + d.data[k] + "	<button onclick=\"javascript:eraseCookie(d.data[k]);\">Remove</button><br>");
 		   	divPic.innerHTML += ("<img src=\"" + d.data[k] + "\"/><br><br>");
 		   }
 		}
@@ -74,11 +75,20 @@
   </script>
 
 <script>
-var cookies = document.cookie.split(';');
+var i = 0;
+for (var j = 0; j < i; j++) {
+	doQuery(localStorage.getElementById("0");
+}
+function addURL(url) {
+	localStorage.setItem(i, url);
+	i++;
+	location.reload();
+};
+/*var cookies = document.cookie.split(';');
 var i = 0;
 while (hasNext(cookies, i)) {
 	i = (i + 3) % 3
 	doQuery(cookies[i]);
-}
+}*/
 </script>
 </html>
