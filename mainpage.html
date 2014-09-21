@@ -3,6 +3,7 @@
 	<head>
 		<title>Comixr: All Your Favorites in One Place</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="http://plasq.com/attachments/large/135/comic-life-2-icon.png" >
 	</head>
 
 <body>
@@ -71,20 +72,20 @@
   </script>
 
 <script>
-var urls = [];
-for (var i = 0; i < urls.length; i++) {
-	doQuery(urls[i]);
+var i = 0;
+for (var j = 0; j < i; j++) {
+	doQuery(localStorage.getElementById("0");
 }
 function addURL(url) {
-	urls[urls.length] = url;
-	doQuery(url);
+	localStorage.setItem(i, url);
+	i++;
 	location.reload();
 };
-var cookies = document.cookie.split(';');
+/*var cookies = document.cookie.split(';');
 var i = 0;
 while (hasNext(cookies, i)) {
 	i = (i + 3) % 3
 	doQuery(cookies[i]);
-}
+}*/
 </script>
 </html>
