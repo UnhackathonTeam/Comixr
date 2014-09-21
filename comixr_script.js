@@ -1,3 +1,5 @@
+
+
 function createCookie(name) {
 	var date = new Date();
 	date.setTime("Thu, Mon 25 Dec 2017");

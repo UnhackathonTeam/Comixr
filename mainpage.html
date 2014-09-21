@@ -22,7 +22,7 @@
 		<img src="http://cdn.faniq.com/images/logo/86/6686-1.gif" />
 	<script src="comixr_script.js"></script>
 	<font color="white">Enter a URL here to track another webcomic</font> <input type="text" id="newURL"=></input>
-	<button onclick="javascript:createCookie(newURL);">Add</button><br><br>
+	<button onclick="javascript:addURL(newURL);">Add</button><br><br>
 	<div id="pic">
 
 	</div>
@@ -71,12 +71,20 @@
   </script>
 
 <script>
+var urls = [];
+for (var i = 0; i < urls.length; i++) {
+	doQuery(urls[i]);
+}
+function addURL(url) {
+	urls[urls.length] = url;
+	doQuery(url);
+	location.reload();
+};
 var cookies = document.cookie.split(';');
 var i = 0;
 while (hasNext(cookies, i)) {
 	i = (i + 3) % 3
 	doQuery(cookies[i]);
 }
-doQuery("http://xkcd.com");
 </script>
 </html>
