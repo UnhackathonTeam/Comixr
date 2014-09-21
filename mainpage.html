@@ -25,8 +25,10 @@
 	</div>
 		<img src="http://cdn.faniq.com/images/logo/86/6686-1.gif" />
 	<script src="comixr_script.js"></script>
-	<font color="white">Enter a URL here to track another webcomic</font> <input type="text" id="newURL"=></input>
-	<button onclick="javascript:addURL(newURL);">Add</button><br><br>
+	<font color="white">Enter a URL here to track another webcomic</font> 
+	<input type="text" id="newURL"></input>
+	<button onclick="javascript:store(newURL);">Add</button><br><br>
+	<button onclick="javascript:clearLocal();">Clear All</button><br><br>
 	<div id="pic">
 
 	</div>
@@ -45,7 +47,6 @@
       },
       "host": "import.io"
     });
-
     // Data and done callbacks
     var dataCallback = function(data) {
       var divPic = document.getElementById("pic");
@@ -53,7 +54,7 @@
 	    var d = data[i];
 		for (var k in d.data) {
 			if (/^http/.test(d.data[k])) {
-			divPic.innerHTML += ("This comic taken from: " + d.data[k] + "	<button onclick=\"javascript:eraseCookie(d.data[k]);\">Remove</button><br>");
+			divPic.innerHTML += ("This comic taken from: " + d.data[k] + "<br>");
 		   	divPic.innerHTML += ("<img src=\"" + d.data[k] + "\"/><br><br>");
 		   }
 		}
@@ -75,6 +76,53 @@
   </script>
 
 <script>
+
+function store(url) //stores the inputted url
+{
+   	 localStorage.setItem(Number(localStorage.getItem("index")), url.value);
+   	 localStorage.setItem("index", String(Number(localStorage.getItem("index"))+1));
+   	 location.reload();
+}
+
+function read(i) //returns a stored url given it's index number
+{
+  	  return localStorage.getItem(i);
+}
+
+function clearLocal() //clears the localStorage
+{
+	localStorage.clear();
+	location.reload();
+}
+
+function removeComic(i)
+{
+	localStorage.setItem(i, null);
+	location.reload();
+}
+
+</script>
+
+<script>
+function pageLoad() {
+	if (localStorage.getItem("index")==null) {
+		localStorage.setItem("index", "0");
+	}
+	else {
+		for(var i=0; i<Number(localStorage.getItem("index")); i++) {
+			doQuery(read(i));
+		}
+	}
+}
+
+window.onload = pageLoad;
+</script>
+
+<script>
+
+
+/*Old code, replaced by other methods
+
 var i = 0;
 for (var j = 0; j < i; j++) {
 	doQuery(localStorage.getElementById("0");
@@ -84,6 +132,7 @@ function addURL(url) {
 	i++;
 	location.reload();
 };
+
 /*var cookies = document.cookie.split(';');
 var i = 0;
 while (hasNext(cookies, i)) {
@@ -91,4 +140,7 @@ while (hasNext(cookies, i)) {
 	doQuery(cookies[i]);
 }*/
 </script>
+
+
+
 </html>
