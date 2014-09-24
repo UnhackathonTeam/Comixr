@@ -1,0 +1,35 @@
+List of webcomics known to currently work:
+
+http://xkcd.com
+http://buttersafe.com
+http://www.thedoghousediaries.com/
+http://limbero.org/jl8/183
+http://brawlinthefamily.keenspot.com/
+http://thegamercat.com/comic/?latest=comics
+http://explosm.net/comics/new
+
+
+
+
+List of webcomics known to not currently work: 
+
+(But do work on ComicExtractor2, a new extractor)
+
+
+http://www.paranatural.net/
+http://www.vgcats.com/super/
+http://www.unconventional-comic.com/
+http://www.crosarth.com/
+http://www.shiftylook.com/comics/katamari
+http://battle-dog.tumblr.com/
+http://thinkbeforeyouthink.net/
+
+
+(Don't work on ComicExtractor2)
+http://invisiblebread.com/
+http://www.amazingsuperpowers.com/
+
+
+Another way to train to find comics:
+mechanical turk
+amazon
