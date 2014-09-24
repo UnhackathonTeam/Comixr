@@ -62,6 +62,7 @@
     }
 
 // 3. Do the query (when the function is called)
+    //goes to the url, looks for the comic image, and grabs it if it thinks it is  it (depedent on testing)
     var doQuery = function(url) {
       // Query for tile Comixr
      importio.query({
@@ -80,7 +81,7 @@
 function store(url) //stores the inputted url
 {
    	 localStorage.setItem(Number(localStorage.getItem("index")), url.value);
-   	 localStorage.setItem("index", String(Number(localStorage.getItem("index"))+1));
+   	 localStorage.setItem("index", String(Number(localStorage.getItem("index"))+1)); //increases index by 1
    	 location.reload();
 }
 
@@ -89,33 +90,35 @@ function read(i) //returns a stored url given it's index number
   	  return localStorage.getItem(i);
 }
 
-function clearLocal() //clears the localStorage
+function clearLocal() //clears the localStorage (every comic gets forgotten)
 {
 	localStorage.clear();
 	location.reload();
 }
 
-function removeComic(i)
+function removeComic(i) //removes a single comic rom local storage
 {
-	localStorage.setItem(i, null);
+	localStorage.removeItem(i);
 	location.reload();
 }
 
 </script>
 
 <script>
-function pageLoad() {
-	if (localStorage.getItem("index")==null) {
-		localStorage.setItem("index", "0");
+function pageLoad() {  //loads the comics onto the page
+	if (localStorage.getItem("index")==null) { //checks if local storage exists
+		localStorage.setItem("index", "0");    //initializes index for keeping track of the comics
 	}
 	else {
-		for(var i=0; i<Number(localStorage.getItem("index")); i++) {
+		var divPic = document.getElementById("pic");
+		for(var i=0; i<Number(localStorage.getItem("index")); i++) { //displays all comics in local storage
 			doQuery(read(i));
+			//divPic.innerHTML += "<button onclick='javascript:removeComic("+String(i)+");'>Remove</button><br>;"
 		}
 	}
 }
 
-window.onload = pageLoad;
+window.onload = pageLoad; //calls the pageLoad() method when the page loads
 </script>
 
 <script>
