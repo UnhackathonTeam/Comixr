@@ -1,0 +1,13 @@
+idea for comixr:
+
+on the topic of webscraping and legality in reagrd to authors not getting money, 
+could we devise a system where everytime a page is accessed to get an image we
+access that page in a way so that the author gets a page visit, meaning they
+get ad revenue?
+
+Users don't see there ads, our servers (or whatever would do it) pretends to be
+a visitor to the site, giving them money.
+
+We host our own ads in order to make our money.
+
+Although, if people could do that I find it too easy to abuse.
